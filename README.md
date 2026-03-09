@@ -2,7 +2,7 @@
 
 ### Preliminaries
 ![WhatsApp Image 2026-03-09 at 11 16 33 AM](https://github.com/user-attachments/assets/393e9802-b1ba-4cd1-84ef-e54e08f8daaf)
-
+<img width="600" height="338" alt="image" src="https://github.com/user-attachments/assets/39d6babf-f927-4aef-8c75-485498579980" />
 1. Connect Tx module to the FrSky tandem X20s through the crsf pin.
 2. Connect Rx module to Telem 1 in Pixhawk.
 3. Connect Pixhawk Fc through USB to QGC, and setup the according to this https://docs.px4.io/main/en/telemetry/crsf_telemetry#expresslrs-radio-systems.
@@ -10,8 +10,10 @@
 5. Once set up, navigate to model "plane icon" in the FrSky radio, go to RF System, enable external module, and disable internal.
 6. Type: Elrs, Baud: 921k, also disable backpack and set the frequency to 500Hz.
 ### Connection
-<img width="600" height="338" alt="image" src="https://github.com/user-attachments/assets/39d6babf-f927-4aef-8c75-485498579980" />
+
 <img width="593" height="762" alt="image" src="https://github.com/user-attachments/assets/cd6c0665-47bc-4c91-af38-c9aacc25a852" />
+
+
 1. Connect the jetson nano uart_a, Rx1 and Tx1 tied together and connected to the crsf pin on the Tx module, and 5V & Gnd to power it up.
 2. Use the example.py attached to send rc commands and receive telem.
 
