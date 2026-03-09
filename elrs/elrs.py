@@ -27,14 +27,19 @@ class ELRS:
         self.baud = baud
         self.rate = rate
         self._running = False
+        self._start_tick = time.time()
+        self.armed = False
         self.set_channels([])
         self.telemetry_callback = telemetry_callback
         self.verbose = verbose
-    
+
     def set_channels(self, input_channels: list[int]) -> bytes:
         input_channels = input_channels[:self.NUM_CHANNELS]
         channels = [RC_CHANNEL_MID] * self.NUM_CHANNELS
         channels[:len(input_channels)] = [int(v) for v in input_channels]
+        if time.time() - self._start_tick > 5: # Auto arm after 5 seconds 
+            if self.armed:
+                channels[8] = RC_CHANNEL_MAX  # Arm
         self.rc_frame = build_rc_frame(channels)
 
     async def _run(self):

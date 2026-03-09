@@ -5,8 +5,8 @@ from gamepad_mapper import load_or_map, read_gamepad
 from elrs import ELRS
 from datetime import datetime
 
-PORT_DEFAULT = "/dev/ttyUSB0"
-BAUD_DEFAULT = 921600
+PORT_DEFAULT = "/dev/ttyTHS1"
+BAUD_DEFAULT = 115200
 
 async def elrs_loop(joystick, port, baud, mapping, rate=50):
     elrs = ELRS(port, baud=baud, rate=rate)
